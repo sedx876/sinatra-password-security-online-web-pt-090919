@@ -41,12 +41,12 @@ class ApplicationController < Sinatra::Base
 	end
 
 	get "/success" do
-		# if logged_in?
-		# 	erb :success
-		# else
-		# 	redirect "/login"
-		# end
-		current_user
+		if logged_in?
+			erb :success
+		else
+			redirect "/login"
+		end
+		#current_user
 	end
 
 	get "/failure" do
